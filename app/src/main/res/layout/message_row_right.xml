@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+
+        android:id="@+id/message_container_round_corner_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="3dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/message_container_round_corner_right"
+        android:padding="10dp"
+
+        >
+
+
+        <TextView
+            android:id="@+id/chatName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riad Safowan"
+
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+
+            />
+
+        <TextView
+            android:id="@+id/chatMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chatName"
+            android:layout_marginVertical="1dp"
+            android:text="Hello how are you??"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/chatDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chatMessage"
+
+            android:text="JAN 67 87 2020"
+           />
+
+
+        <TextView
+            android:id="@+id/chatTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:layout_below="@+id/chatMessage"
+            android:layout_toRightOf="@+id/chatDate"
+            android:text="12:12:45 PM"
+            android:layout_marginStart="10dp"
+
+            android:textStyle="italic" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

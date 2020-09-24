@@ -1,0 +1,156 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register.RegisterActivity">
+
+    <EditText
+        android:id="@+id/regiEdtTxtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name "
+        android:inputType="textPersonName"
+        android:maxLength="21"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="60dp"
+        app:layout_constraintVertical_bias=".4" />
+
+    <EditText
+        android:id="@+id/regiEdtTxtNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="25dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/regiEdtTxtName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtName"
+        app:layout_constraintTop_toBottomOf="@+id/regiEdtTxtName" />
+
+    <EditText
+        android:id="@+id/regiEdtTxtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="25dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/regiEdtTxtNumber"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtNumber"
+        app:layout_constraintTop_toBottomOf="@+id/regiEdtTxtNumber" />
+
+    <EditText
+        android:id="@+id/regiEdtTxtRePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="25dp"
+        android:hint="Re-Enter your Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/regiEdtTxtPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/regiEdtTxtPassword" />
+
+    <Button
+        android:id="@+id/regiBtnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:text="Create Account"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regiEdtTxtRePassword"
+        tools:layout_editor_absoluteX="63dp" />
+
+    <TextView
+        android:id="@+id/regiWarnName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your Name !"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toTopOf="@+id/regiEdtTxtName"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtName"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/regiWarnNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your Email !"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toTopOf="@+id/regiEdtTxtNumber"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtNumber"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/regiWarnPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your Password !"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toTopOf="@+id/regiEdtTxtPassword"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtPassword"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/regiWarnRePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Re-Enter your Password !"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toTopOf="@+id/regiEdtTxtRePassword"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtRePassword"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/regiWarnIncorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Didn't match !"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtRePassword"
+        app:layout_constraintTop_toBottomOf="@+id/regiEdtTxtRePassword"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/regiWarnNumberExist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This number is already exist !"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtNumber"
+        app:layout_constraintTop_toBottomOf="@+id/regiEdtTxtNumber"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/regiWarnPasswordSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter at least 6 character !"
+        app:layout_constraintBottom_toTopOf="@+id/regiEdtTxtPassword"
+        app:layout_constraintStart_toStartOf="@+id/regiEdtTxtPassword"
+        android:visibility="gone"/>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Chirp"
+        android:textSize="70dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "847151461675",
+    "firebase_url": "https://chirp-80886.firebaseio.com",
+    "project_id": "chirp-80886",
+    "storage_bucket": "chirp-80886.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847151461675:android:14ad1bf48f2a9185e5c16e",
+        "android_client_info": {
+          "package_name": "com.example.chirp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847151461675-icdvohe4d1bvsiphcrc7jc5qpreo2vui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chirp",
+            "certificate_hash": "c5b05d1d4c00bc0b71cd9e9d438ca40bac460d59"
+          }
+        },
+        {
+          "client_id": "847151461675-o72j0j88v6a1ce7oj42skkannkegp5rk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA9hJUqg37G1fyN5H3KCMSjZMT17VhT7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847151461675-o72j0j88v6a1ce7oj42skkannkegp5rk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
