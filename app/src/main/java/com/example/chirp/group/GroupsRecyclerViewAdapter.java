@@ -55,18 +55,7 @@ public class GroupsRecyclerViewAdapter extends RecyclerView.Adapter<GroupsRecycl
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView groups_name;
-//
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
-//        liuvev
+
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
             groups_name = itemView.findViewById(R.id.groups_name);
