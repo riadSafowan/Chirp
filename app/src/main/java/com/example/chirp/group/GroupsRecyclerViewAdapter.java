@@ -46,7 +46,7 @@ public class GroupsRecyclerViewAdapter extends RecyclerView.Adapter<GroupsRecycl
             }
         });
     }
-
+//fgrrvbjnrtbrtnb;ortnb;oijnbowrtgbrt
     @Override
     public int getItemCount() {
         return groups.size();
