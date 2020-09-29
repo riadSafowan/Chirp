@@ -38,7 +38,7 @@ public class GroupChatActivity extends AppCompatActivity {
     //    private ScrollView myScrollView;
     private Toolbar group_page_toolbar;
     private ImageView group_back_button;
-    private TextView groupName, chatName, chatMessage, chatDate, chatTime;
+    private TextView groupName;
     private EditText text_input;
     private View text_send;
     MessagesRecyclerViewAdapter adapter;
@@ -67,12 +67,14 @@ public class GroupChatActivity extends AppCompatActivity {
         text_input.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                recyclerView.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        recyclerView.smoothScrollToPosition(messages.size() - 1);
-                    }
-                });
+                if (!messages.isEmpty()) {
+                    recyclerView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            recyclerView.smoothScrollToPosition(messages.size() - 1);
+                        }
+                    });
+                }
                 return false;
             }
         });
@@ -140,12 +142,12 @@ public class GroupChatActivity extends AppCompatActivity {
             messages.add(new Message(chatDate, chatMessage, chatName, chatNameID, chatTime));
         }
         adapter.notifyDataSetChanged();
-        recyclerView.post(new Runnable() {
-            @Override
-            public void run() {
-                recyclerView.smoothScrollToPosition(messages.size() - 1);
-            }
-        });
+
+        if (!messages.isEmpty()) {
+
+            recyclerView.scrollToPosition(messages.size() - 1);
+
+        }
 //        recyclerView.smoothScrollToPosition(recyclerView.getAdapter().getItemCount() - 1);
 //        recyclerView.smoothScrollToPosition(messages.size()-1);
     }
@@ -153,9 +155,10 @@ public class GroupChatActivity extends AppCompatActivity {
     private void sendMessageToDataBase() {
 
         String message = text_input.getText().toString();
+        String adjusted = message.replaceAll("(?m)^[ \t]*\r?\n", "");
         String messageKey = databaseReference.push().getKey();
 
-        if (!message.trim().equals("")) {
+        if (!adjusted.trim().equals("")) {
 
             Calendar date = Calendar.getInstance();
             @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
@@ -169,9 +172,10 @@ public class GroupChatActivity extends AppCompatActivity {
             HashMap<String, Object> messageInfo = new HashMap<>();
             messageInfo.put("name", currentUserName);
             messageInfo.put("senderID", currentUserID);
-            messageInfo.put("message", message);
+            messageInfo.put("message", adjusted);
             messageInfo.put("date", currentDate);
             messageInfo.put("time", currentTime);
+
 
             messageKeyDatabaseReference.updateChildren(messageInfo);
         }
@@ -199,10 +203,6 @@ public class GroupChatActivity extends AppCompatActivity {
         setSupportActionBar(group_page_toolbar);
         group_back_button = findViewById(R.id.group_back_button);
         groupName = findViewById(R.id.groupName);
-        chatName = findViewById(R.id.chatName);
-        chatMessage = findViewById(R.id.chatMessage);
-        chatDate = findViewById(R.id.chatDate);
-        chatTime = findViewById(R.id.chatTime);
         text_input = findViewById(R.id.text_input);
         text_send = findViewById(R.id.text_send);
 
