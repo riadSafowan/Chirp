@@ -167,6 +167,7 @@ public class GroupChatActivity extends AppCompatActivity {
             Calendar time = Calendar.getInstance();
             @SuppressLint("SimpleDateFormat") SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss a");
             currentTime = timeFormat.format(time.getTime());
+            assert messageKey != null;
             messageKeyDatabaseReference = databaseReference.child(messageKey);
 
             HashMap<String, Object> messageInfo = new HashMap<>();
@@ -175,8 +176,6 @@ public class GroupChatActivity extends AppCompatActivity {
             messageInfo.put("message", adjusted);
             messageInfo.put("date", currentDate);
             messageInfo.put("time", currentTime);
-
-
             messageKeyDatabaseReference.updateChildren(messageInfo);
         }
     }

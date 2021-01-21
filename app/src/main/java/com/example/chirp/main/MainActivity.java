@@ -43,17 +43,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
-
         initialize();
-
         try {
             currentUserId = currentUser.getUid();
-
         } catch (NullPointerException npe) {
             firebaseAuth.signOut();
             SendUserToLoginActivity();
         }
-
         databaseReference.child("User").child(currentUserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -69,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
         setSupportActionBar(mToolbar);
@@ -87,16 +82,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     private void initialize() {
-
         mToolbar = findViewById(R.id.main_page_toolbar);
         mViewPager = findViewById(R.id.main_tabs_pager);
         mTabLayout = findViewById(R.id.main_tabs);
         firebaseAuth = FirebaseAuth.getInstance();
         currentUser = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
-
     }
 
     @Override
